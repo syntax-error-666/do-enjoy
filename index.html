@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botones sorpresa</title>
+
+    <style>
+        body {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("fondo.jpg");
+            background-size: cover;
+            background-position: center;
+            background-color: #1e1e2f;
+            color: white;
+            font-family: Cooper Black;
+            text-align: center;
+        }
+
+        button {
+            background-color: #6c63ff;
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #554eea;
+        }
+	p {
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+    </style>
+</head>
+
+<body>
+
+    <h1>Presiona un botón</h1>
+
+    <button onclick="ir()">Botón 1</button>
+    <button onclick="ir()">Botón 2</button>
+    <button onclick="ir()">Botón 3</button>
+    <br>
+    <button onclick="musica()">🎵 Música</button>
+
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        var sonando = false;
+
+        function musica() {
+            var audio = document.getElementById("musica");
+
+            if (sonando) {
+                audio.pause();
+                sonando = false;
+            } else {
+                audio.volume = 0.4;
+                audio.play();
+                sonando = true;
+            }
+        }
+
+        function ir() {
+            var paginas = [
+                "https://es.games68.com/games.php?id=14072#google_vignette",
+                "https://www.youtube.com/watch?v=_od_XsXY3w4",
+                "https://poki.com/es/g/true-love-calculator"
+            ];
+
+            var numero = Math.floor(Math.random() * paginas.length);
+            window.location = paginas[numero];
+        }
+    </script>
+	<p>En realidad cada boton deberia tener una pagina web... pero se pone aletorio, en total son 3 webs, musiquita para ambiente:)</p>
+
+
+</body>
+</html>

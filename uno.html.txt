@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>🎉 Página UNO</h1>
+    <a href="index.html">Volver</a>
+</body>
+</html>
